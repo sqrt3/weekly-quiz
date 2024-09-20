@@ -8,13 +8,13 @@ public class AddressBook {
 
     private static List<Contact> contacts = new ArrayList<>();
 
-    public static void displayContacts() {
+    public void displayContacts() {
         for (Contact c : contacts) {
             System.out.println(c.toString());
         }
     }
 
-    public static void searchContact(String name) {
+    public void searchContact(String name) {
         int cnt = 0;
         for (Contact c : contacts) {
             if (name.equals(c.name)) {
@@ -29,6 +29,7 @@ public class AddressBook {
 
     public static void main(String[] args) {
         String name, phone, company, relationship;
+        AddressBook ab = new AddressBook();
         Scanner sc = new Scanner(System.in);
         while (true) {
             System.out.println(
@@ -61,17 +62,20 @@ public class AddressBook {
                     if (contacts.size() == 0) {
                         System.out.println("연락처가 비어있습니다.");
                     } else {
-                        displayContacts();
+                        ab.displayContacts();
                     }
                     break;
                 case "4":
                     System.out.println("검색할 이름을 입력하세요:");
                     name = sc.nextLine();
-                    searchContact(name);
+                    ab.searchContact(name);
                     break;
                 case "5":
                     sc.close();
                     return;
+                default:
+                    System.out.println("올바르지 않은 입력입니다.");
+                    break;
             }
         }
     }
