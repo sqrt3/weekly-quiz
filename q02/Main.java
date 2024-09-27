@@ -10,12 +10,12 @@ public class Main {
         while (true) {
             System.out.println(
                     """
-                            1. 비즈니스 연락처 추가
-                            2. 개인 연락처 추가
-                            3. 연락처 출력
-                            4. 연락처 검색
-                            5. 종료
-                            메뉴를 선택해주세요:\s""");
+                    1. 비즈니스 연락처 추가
+                    2. 개인 연락처 추가
+                    3. 연락처 출력
+                    4. 연락처 검색
+                    5. 종료
+                    메뉴를 선택해주세요:\s""");
             switch (sc.nextLine()) {
                 case "1":
                     System.out.println("이름을 입력하세요:");
@@ -24,7 +24,7 @@ public class Main {
                     phone = sc.nextLine();
                     System.out.println("회사명을 입력하세요:");
                     company = sc.nextLine();
-                    ab.contacts.add(new BusinessContact(name, phone, company));
+                    ab.add(new BusinessContact(name, phone, company));
                     break;
                 case "2":
                     System.out.println("이름을 입력하세요:");
@@ -33,7 +33,7 @@ public class Main {
                     phone = sc.nextLine();
                     System.out.println("관계를 입력하세요:");
                     relationship = sc.nextLine();
-                    ab.contacts.add(new PersonalContact(name, phone, relationship));
+                    ab.add(new PersonalContact(name, phone, relationship));
                     break;
                 case "3":
                     ab.displayContacts();

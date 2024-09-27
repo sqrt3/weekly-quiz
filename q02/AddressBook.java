@@ -5,7 +5,11 @@ import java.util.List;
 
 public class AddressBook {
 
-    List<Contact> contacts = new ArrayList<>();
+    private static List<Contact> contacts;
+
+    public AddressBook() {
+        this.contacts = new ArrayList<>();
+    }
 
     public void displayContacts() {
         if (contacts.isEmpty()) {
@@ -28,5 +32,9 @@ public class AddressBook {
         if (!chk) {
             System.out.println("연락처를 찾을 수 없습니다.");
         }
+    }
+
+    public void add(Contact c) {
+        contacts.add(c);
     }
 }
